@@ -84,3 +84,56 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
+.feed {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between profile and post */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center profile picture and name */
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular profile picture */
+    margin-bottom: 10px; /* Space between image and name */
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.post {
+    flex: 1; /* Makes the post take up remaining space */
+    text-align: left;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.join-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff0000; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-btn:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
