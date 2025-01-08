@@ -11,38 +11,47 @@
   <header class="header">
     <h2 class="logo">SHOPBACK</h2>
     <nav class="navigation">
-      <a href="index.html">Home</a>
-      <a href="account.html">Account</a>
+      <a href="dashboard.html">Home</a>
       <a href="rewards.html">Rewards</a>
       <a href="social.html">Social</a> <!-- Active tab -->
       <button class="logout-popup">Log Out</button>
-  </nav>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Elevate your style with the latest trends</h1>
-      <p>Discover top fashion brands now.</p>
-    </div>
-    <div class="hero-image"></div>
+  <!-- Account Info Section -->
+  <section class="profile-picture">
+    <h2>Profile Picture</h2>
+    <img src="profile-picture.jpg" alt="Profile Picture" class="profile-img">
   </section>
-
-  <!-- Featured Deals -->
-  <section class="deals">
-    <h2>Best Cashback deals on fashion brands</h2>
-    <div class="deals-grid">
-      <!-- Example deal card -->
-      <div class="deal-card">
-        <div class="deal-image" style="background-image: url('image1.jpg');"></div>
-        <div class="deal-info">
-          <span class="upsized">Upsized</span>
-          <h3>Swarovski</h3>
-          <p>Up to 15% Cashback</p>
-          <small>plus 15.5% - Ends in 1 day</small>
+  <section class="account-info">
+    <h2>Account Information</h2>
+    <div class="info">
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>User ID:</strong> johndoe123</p>
+      <p><strong>Account Rank:</strong> Gold</p>
+      <div class="rank-progress">
+        <p><strong>Progress to next rank:</strong></p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div> <!-- Example width -->
         </div>
       </div>
-      <!-- Add more cards here -->
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement">
+      <p><strong>Times Used ShopBack:</strong> 45</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 90%;"></div> <!-- Example width -->
+      </div>
+    </div>
+    <div class="achievement">
+      <p><strong>Total Cashback:</strong> $120</p>
+      <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div> <!-- Example width -->
+      </div>
     </div>
   </section>
 </body>
