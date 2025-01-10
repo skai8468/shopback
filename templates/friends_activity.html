@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends' Activity</title>
+</head>
+<body>
+    <h1>Friends' Activity</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Friend</th>
+                <th>Store Name</th>
+                <th>Voucher Used</th>
+                <th>Item Bought</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for activity in friends_activity %}
+            <tr>
+                <td>{{ activity[0] }}</td>  <!-- Friend's Name -->
+                <td>{{ activity[1] }}</td>  <!-- Store Name -->
+                <td>{{ activity[2] }}</td>  <!-- Voucher Used -->
+                <td>{{ activity[3] }}</td>  <!-- Item Purchased -->
+                <td>{{ activity[4] }}</td>  <!-- Timestamp -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
