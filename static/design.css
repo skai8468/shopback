@@ -1,0 +1,314 @@
+/*button{
+     font-size: 15px;
+     border-radius: 100 px;
+}
+
+input{
+    margin-left: 200 px;
+}*/
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Top Header Bar */
+.top-header {
+    background-color: grey; /* Dark background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em; /* Spacing inside the header */
+    /*border-bottom: 2px solid #52312b; /* Optional border for separation */
+}
+
+.shopback-main-button {
+    cursor: pointer;
+}
+
+.logo-search {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Spacing between logo and search */
+}
+
+.header-logo {
+    width: 150px; /* Adjust logo size */
+}
+
+.search {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 8px;
+}
+
+.search-bar {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    font-size: 1rem;
+    background-color: grey;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
+
+.search-bar::placeholder {
+    padding-left: 10px;
+    color: white;
+}
+
+.search-button {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding-right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-left: 10px;
+    
+}
+
+.search-logo {
+    max-width: 60%; /* Adjust based on the icon size */
+    max-height: 60%;
+    display: block;
+}
+
+.search-button:hover {
+    background-color: #ddd;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Space between links */
+}
+
+.top-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3em 0.5em;
+}
+
+.top-links a:hover {
+    text-decoration: underline;
+}
+
+.account {
+    display: flex;
+    border: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.account-logo {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    background-color: grey;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+}
+
+.wallet {
+    flex: 1;
+    font-weight: bold;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+.navbar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8em;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.navbar button:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-color: rgba(246,71,52,255);
+    color: white;
+    /*padding: 2em 0; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 810px;
+    width: 100vw; /* Ensure the parent spans the full viewport width */
+    margin: 0; /* Remove any external margin */
+}
+
+
+.shopback-logo {
+    width: 800px;
+    height: 100%;
+    
+}
+
+.hero-content {
+    background-color: rgb(245, 75, 8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensure it spans the full width of its parent */
+    height: 100%;
+    max-width: none; /* Remove any maximum width constraints */
+    padding: 0; /* Remove any internal padding if present */
+    margin: 0; /* Remove default margin if it exists */
+}
+
+.loyalty-stampcard-text {
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.description-text {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.hero-mascot {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-text {
+    flex: 1;
+    height: 500px;
+    text-align: left;
+    margin-left: 2em;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    margin-bottom: 1em;
+}
+
+.stampcard-display {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stampcard-display img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.view-stamps-link {
+    /*display: inline-block;*/
+    margin-top: 1em;
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+    padding-right: 30px;
+}
+
+.store-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 0 auto;
+}
+
+.store-bar {
+    background-color: #333;
+    color: white;
+    border-radius: 100px;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    width: 850px;
+    height: 100px;
+}
+
+.store-logo {
+    width: 100px;
+    height: 100px;
+    padding-left: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.stampcards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.stampcards img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    padding-right: 5px;
+}
+
+.section-title {
+    text-align: center;
+    margin: 1em 0;
+    font-size: 1.8rem;
+}
+
+#add-store-bar {
+    display: block;
+    margin: 2em auto;
+    padding: 1em;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-store-bar:hover {
+    background-color: #333;
+}

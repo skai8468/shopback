@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='payment.css') }}">
+</head>
+<body>
+    
+        <div class="header-bar">
+            <button class="back">
+                ← Back To Store
+            </button>
+            <button class="shopback-main-button">
+                <img src="{{ url_for('static', filename= 'icons/ShopBack-menu-logo.png')}}" alt="ShopBack Logo" class="header-logo">
+            </button>
+        </div>
+
+
+
+    <main>
+        {% if success %}
+            <p style="color: green;">{{ success }}</p>
+        {% endif %}
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form action="/buy" method="POST" onsubmit="return validateForm()">
+        <div class="payment-container">
+            <div class="payment-card">
+                <div class="order-details">
+                    <p class="order-amount">Order amount</p>
+                    <h2 class="amount">$100.00</h2>
+                    <p class="voucher-details">Fairprice $100 Voucher (x1)</p>
+                </div>
+
+                <div class="promo-section">
+                    <span>Apply Promo</span>
+                    <span class="promo-arrow">→</span>
+                </div>
+                <div class="last-box">
+                    <div class="payment-details">
+                        <div class="cashback-section">
+                            <span>Use Cashback:</span>
+                            <input type="text" placeholder="$0.00" class="cashback-input">
+                        </div>
+                        <a href="#" class="select-payment-link">Select Payment</a>
+                    </div>
+    
+                    <div class="total-section">
+                        <p>Total (incl. GST)</p>
+                        <h2 class="total-amount">$100.00</h2>
+                    </div>
+
+                    <button class="confirm-payment-btn" id="buyButton" type="submit" onclick="return validateForm()">Confirm Payment</button>
+
+
+                    <div class="shops">
+                        <label>
+                            <input type="radio" id="store1" name="store" value="store_1">
+                            shop1
+                        </label><br>
+                        <label>
+                            <input type="radio" id="store2" name="store" value="store_2">
+                            shop2
+                        </label><br>
+                        <label>
+                            <input type="radio" id="store3" name="store" value="store_3">
+                            shop3
+                        </label><br>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+        </div>
+        </form>
+    </main>
+</body>
+</html>
