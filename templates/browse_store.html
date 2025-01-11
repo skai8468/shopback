@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Store</title>
+</head>
+<body>
+    <h1>Browse Store for Group {{ group_id }}</h1>
+
+    <p>Welcome to the group! Browse the store items below.</p>
+    <!-- Example content to simulate browsing a store -->
+    <ul>
+        <li>Product 1 - $10</li>
+        <li>Product 2 - $20</li>
+        <li>Product 3 - $30</li>
+    </ul>
+
+    <p>Current Discount: <span id="discount">Loading...</span>%</p>
+
+    <form id="joinForm" action="/join_group/{{ group_id }}" method="POST">
+        <button type="submit">Join Group</button>
+    </form>
+
+    <script>
+        // On form submission, the discount will be calculated dynamically based on the group size
+        document.getElementById('joinForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            fetch(`/join_group/${group_id}`, {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('discount').innerText = data.current_discount;
+            })
+            .catch(error => {
+                console.error('Error joining group:', error);
+            });
+        });
+    </script>
+</body>
+</html>
