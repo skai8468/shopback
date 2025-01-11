@@ -11,7 +11,7 @@ body {
     font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: white;
 }
 
 /* Top Header Bar */
@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 1em; /* Spacing inside the header */
+     /* Spacing inside the header */
     /*border-bottom: 2px solid #52312b; /* Optional border for separation */
 }
 
@@ -270,9 +270,8 @@ body {
 }
 
 .store-logo {
-    width: 100px;
-    height: 100px;
-    padding-left: 10px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -312,3 +311,30 @@ body {
 #add-store-bar:hover {
     background-color: #333;
 }
+
+.coupons-display {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.coupons {
+    height: 150px;
+    width: 250px;
+    
+}
+
+.voucher-display {
+    display: flex;
+    height: 50px; 
+    width: 50px;
+    padding: 5px;  
+    justify-content: center;    
+    align-items: center;
+    margin-top: -25px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin-left: -25px;
+    color: black;
+}
+

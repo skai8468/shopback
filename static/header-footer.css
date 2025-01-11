@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+
 }
 
 
@@ -15,7 +16,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 1em;
 }
 
 .shopback-main-button {
