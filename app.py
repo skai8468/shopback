@@ -660,7 +660,7 @@ def stampcard():
     selected_users = session.get("user_id")  # Use session.get to avoid KeyError if "user_id" is not set.
 
     if not selected_users:
-        return render_template("stampcard.html", error="User not found or not logged in.")
+        return render_template("stampcard.html", stamps="User not found or not logged in.")
 
     # Connect to the database
     db = connect_db()
@@ -671,7 +671,7 @@ def stampcard():
             user = cursor.fetchone()
 
             if not user:
-                return render_template("stampcard.html", error="User not found.")
+                return render_template("stampcard.html", stamps="User not found.")
 
             # Fetch purchase details
             cursor.execute("SELECT * FROM user_store_purchases WHERE user_id = %s", (user[0],))
@@ -679,7 +679,7 @@ def stampcard():
             purchase = cursor.fetchone()
 
             if not purchase:
-                return render_template("stampcard.html", error="Purchase record not found.")
+                return render_template("stampcard.html", stamps="Purchase record not found.")
 
             # Prepare the stamp card data
             stamp_data = {
@@ -692,7 +692,7 @@ def stampcard():
             return render_template("stampcard.html", stamps=stamp_data)
 
     except Exception as e:
-        return render_template("stampcard.html", error=f"An error occurred: {str(e)}")
+        return render_template("stampcard.html", stamps=f"An error occurred: {str(e)}")
 
     finally:
         db.close()  # Ensure the database connection is closed
