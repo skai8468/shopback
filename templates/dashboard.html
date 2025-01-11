@@ -50,67 +50,72 @@
         </header>
     </div> 
         
-    
-        <h2>Available Deals</h2>
-        
-        <!-- Loop through all available deals -->
-        {% for deal in deals %}
-        <div class="deal">
-            <h3>{{ deal[1] }}</h3>  
-            <p>{{ deal[2] }}</p>    
-            <p>Base Discount: {{ deal[3] }}%</p>
-            <p>Valid Until: {{ deal[4] }}</p>
-    
-            <a href="/payment" target="_blank">
-                <button>Payment</button>
-            </a>
-            
-            <!-- Create Group for this Deal -->
-            <a href="/GroupBuy" target="_blank">
-                <button>Group Buy</button>
-            </a>
-            
-            <!-- Share the Group Link (only if join_link exists) -->
-            {% if join_link %}
-                <!-- Share Deal on WhatsApp -->
-                <a href="https://wa.me/?text=Join%20this%20group%20to%20get%20exclusive%20discounts!%20{{ join_link }}" target="_blank">
-                    <button>Share on WhatsApp</button>
-                </a>
-    
-                <!-- Share Deal on Telegram -->
-                <a href="https://t.me/share/url?url={{ join_link }}&text=Join%20this%20group%20to%20get%20exclusive%20discounts!" target="_blank">
-                    <button>Share on Telegram</button>
-                </a>
-            {% endif %}
-    
-            <!-- Share Deal on WhatsApp (original) -->
-            <a href="https://wa.me/?text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
-                <button>Share on WhatsApp</button>
-            </a>
-    
-            <!-- Share Deal on Telegram (original) -->
-            <a href="https://t.me/share/url?url={{ url_for('dashboard', _external=True) }}&text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
-                <button>Share on Telegram</button>
-            </a>
-        </div>
-        <br>
-        {% endfor %}
-    
-    
-        <h3>My Groups</h3>
-        <p>Join a group to unlock higher discounts as more people join!</p>
-        
-        <!-- Loop through user’s groups to display join links -->
-        {% for group in user_groups %}
-            <div class="group">
-                <h4>Group for: {{ group.store_name }}</h4>
-                <p>Join the group to unlock more discounts!</p>
-                <a href="{{ group.join_link }}" target="_blank">
-                    <button>Join Group</button>
-                </a>
+    <main class="content">
+        <section class="deals-section">
+            <h2>Available Deals</h2>
+
+            <!-- Loop through all available deals -->
+            {% for deal in deals %}
+            <div class="deal-card">
+                <h3 class="deal-title">{{ deal[1] }}</h3>
+                <p class="deal-description">{{ deal[2] }}</p>
+                <p class="deal-discount">Base Discount: {{ deal[3] }}%</p>
+                <p class="deal-validity">Valid Until: {{ deal[4] }}</p>
+
+                <div class="deal-actions">
+                    <a href="/payment.html" target="_blank">
+                        <button class="action-button">Payment</button>
+                    </a>
+
+                    <!-- Create Group for this Deal -->
+                    <a href="GroupBuy.html" target="_blank">
+                        <button class="action-button">Group Buy</button>
+                    </a>
+
+                    <!-- Share the Group Link (only if join_link exists) -->
+                    {% if join_link %}
+                        <a href="https://wa.me/?text=Join%20this%20group%20to%20get%20exclusive%20discounts!%20{{ join_link }}" target="_blank">
+                            <button class="action-button">Share on WhatsApp</button>
+                        </a>
+
+                        <a href="https://t.me/share/url?url={{ join_link }}&text=Join%20this%20group%20to%20get%20exclusive%20discounts!" target="_blank">
+                            <button class="action-button">Share on Telegram</button>
+                        </a>
+                    {% endif %}
+
+                    <a href="https://wa.me/?text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
+                        <button class="action-button">Share on WhatsApp</button>
+                    </a>
+
+                    <a href="https://t.me/share/url?url={{ url_for('dashboard', _external=True) }}&text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
+                        <button class="action-button">Share on Telegram</button>
+                    </a>
+                </div>
             </div>
             <br>
-        {% endfor %}
+            {% endfor %}
+        </section>
+
+        <section class="groups-section">
+            <h2>My Groups</h2>
+            <p>Join a group to unlock higher discounts as more people join!</p>
+
+            <!-- Loop through user’s groups to display join links -->
+            <div class="group-list">
+                {% for group in user_groups %}
+                <div class="group-card">
+                    <h4 class="group-title">Group for: {{ group.store_name }}</h4>
+                    <p class="group-description">Join the group to unlock more discounts!</p>
+                    <a href="{{ group.join_link }}" target="_blank">
+                        <button class="action-button">Join Group</button>
+                    </a>
+                </div>
+                <br>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
         <!-- Footer Section -->
         <footer>
             <div>

@@ -129,13 +129,6 @@ body {
     min-height: 100vh; /* Ensure full height of the viewport */
 }
 
-.container {
-    flex: 1; /* Make the container take up remaining space */
-}
-
-.content{
-    padding: 20px;
-}
 
 footer {
     background: #000000; /* Black background */
