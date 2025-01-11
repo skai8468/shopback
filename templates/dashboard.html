@@ -4,83 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome, {{ user }}!</h1>
-    <div 
-        class="navigation">
-        <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
-        <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
-        <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
-        <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
-        <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
-        <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/profile">Profile</a> | |
-        <a href="/stampcard">Rewards</a> |
-        <a href="/social">Social</a>
-        <a href="/logout">Logout</a>
-    </div>
-    <h2>Available Deals</h2>
+        <div class="header">
+            <header>
+              <div class="top-header">
+                  <div class="logo-search">
+                      <button class="shopback-main-button">
+                          <img src="/static/icons/shopbacklogosk.png" alt="ShopBack Logo" class="header-logo">
+                      </button>
+                      <div class="search-bar-container">
+                          <input type="text" placeholder="Search for stores" class="search-bar">
+                          <button class="search-button">
+                              <i class="fa fa-search"></i>
+                          </button>
+                      </div>
+                  </div>
+                  <div class="top-links">
+                      <a href="#" class="refer-earn">Refer & Earn</a>
+                      <a href="#" class="how-it-works">How It Works</a>
+                      <!--<a href="/logout">Logout</a>-->
+                      <div>
+                          <a href="#" class="wallet">$0.00</a>
+                      </div>
+                  </div>
+              </div>
+        <div class="navbar">
+            <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
+            <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
+            <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
+            <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
+            <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
+            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
+            <button onclick="window.location.href='dashboard.html'">Dashboard</button>
+            <button onclick="window.location.href='profile.html'">Profile</button>
+            <button onclick="window.location.href='rewards.html'">Rewards</button> 
+            <button onclick="window.location.href='social.html'">Social</button>
+        </div>
     
-    <!-- Loop through all available deals -->
-    {% for deal in deals %}
-    <div class="deal">
-        <h3>{{ deal[1] }}</h3>  
-        <p>{{ deal[2] }}</p>    
-        <p>Base Discount: {{ deal[3] }}%</p>
-        <p>Valid Until: {{ deal[4] }}</p>
-
-        <a href="/payment" target="_blank">
-            <button>Payment</button>
-        </a>
         
-        <!-- Create Group for this Deal -->
-        <a href="/GroupBuy" target="_blank">
-            <button>Group Buy</button>
-        </a>
+    
+        <h2>Available Deals</h2>
         
-        <!-- Share the Group Link (only if join_link exists) -->
-        {% if join_link %}
-            <!-- Share Deal on WhatsApp -->
-            <a href="https://wa.me/?text=Join%20this%20group%20to%20get%20exclusive%20discounts!%20{{ join_link }}" target="_blank">
+        <!-- Loop through all available deals -->
+        {% for deal in deals %}
+        <div class="deal">
+            <h3>{{ deal[1] }}</h3>  
+            <p>{{ deal[2] }}</p>    
+            <p>Base Discount: {{ deal[3] }}%</p>
+            <p>Valid Until: {{ deal[4] }}</p>
+    
+            <a href="/payment" target="_blank">
+                <button>Payment</button>
+            </a>
+            
+            <!-- Create Group for this Deal -->
+            <a href="/GroupBuy" target="_blank">
+                <button>Group Buy</button>
+            </a>
+            
+            <!-- Share the Group Link (only if join_link exists) -->
+            {% if join_link %}
+                <!-- Share Deal on WhatsApp -->
+                <a href="https://wa.me/?text=Join%20this%20group%20to%20get%20exclusive%20discounts!%20{{ join_link }}" target="_blank">
+                    <button>Share on WhatsApp</button>
+                </a>
+    
+                <!-- Share Deal on Telegram -->
+                <a href="https://t.me/share/url?url={{ join_link }}&text=Join%20this%20group%20to%20get%20exclusive%20discounts!" target="_blank">
+                    <button>Share on Telegram</button>
+                </a>
+            {% endif %}
+    
+            <!-- Share Deal on WhatsApp (original) -->
+            <a href="https://wa.me/?text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
                 <button>Share on WhatsApp</button>
             </a>
-
-            <!-- Share Deal on Telegram -->
-            <a href="https://t.me/share/url?url={{ join_link }}&text=Join%20this%20group%20to%20get%20exclusive%20discounts!" target="_blank">
-                <button>Share on Telegram</button>
-            </a>
-        {% endif %}
-
-        <!-- Share Deal on WhatsApp (original) -->
-        <a href="https://wa.me/?text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
-            <button>Share on WhatsApp</button>
-        </a>
-
-        <!-- Share Deal on Telegram (original) -->
-        <a href="https://t.me/share/url?url={{ url_for('dashboard', _external=True) }}&text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
-            <button>Share on Telegram</button>
-        </a>
-    </div>
-    <br>
-{% endfor %}
-
-
-    <h3>My Groups</h3>
-    <p>Join a group to unlock higher discounts as more people join!</p>
     
-    <!-- Loop through user’s groups to display join links -->
-    {% for group in user_groups %}
-        <div class="group">
-            <h4>Group for: {{ group.store_name }}</h4>
-            <p>Join the group to unlock more discounts!</p>
-            <a href="{{ group.join_link }}" target="_blank">
-                <button>Join Group</button>
+            <!-- Share Deal on Telegram (original) -->
+            <a href="https://t.me/share/url?url={{ url_for('dashboard', _external=True) }}&text=Check%20out%20this%20amazing%20deal%20{{ deal[1] }}%20Base%20Discount%3A%20{{ deal[3] }}%25%20Get%20it%20now%20at%20{{ url_for('dashboard', _external=True) }}" target="_blank">
+                <button>Share on Telegram</button>
             </a>
         </div>
         <br>
-    {% endfor %}
-
+        {% endfor %}
+    
+    
+        <h3>My Groups</h3>
+        <p>Join a group to unlock higher discounts as more people join!</p>
+        
+        <!-- Loop through user’s groups to display join links -->
+        {% for group in user_groups %}
+            <div class="group">
+                <h4>Group for: {{ group.store_name }}</h4>
+                <p>Join the group to unlock more discounts!</p>
+                <a href="{{ group.join_link }}" target="_blank">
+                    <button>Join Group</button>
+                </a>
+            </div>
+            <br>
+        {% endfor %}
+        <!-- Footer Section -->
+        <footer>
+            <div>
+              <h3>Reach us</h3>
+              <a href="#">Chat with us</a>
+              <a href="#">Help centre</a>
+            </div>
+            <div>
+              <h3>ShopBack</h3>
+              <a href="#">About us</a>
+              <a href="#">ShopBack Careers</a>
+              <a href="#">All Stores</a>
+              <a href="#">Business</a>
+              <a href="#">Press</a>
+            </div>
+            <div>
+              <h3>Tools</h3>
+              <a href="#">Download app via iOS</a>
+              <a href="#">Download app via Play Store</a>
+              <a href="#">Download app via Huawei</a>
+              <a href="#">Install ShopBack Button</a>
+            </div>
+            <div>
+              <h3>How it works</h3>
+              <a href="#">Online Cashback</a>
+              <a href="#">ShopBack Pay</a>
+              <a href="#">Vouchers</a>
+            </div>
+            <div class="social-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-telegram"></i>
+              <i class="fab fa-tiktok"></i>
+              <i class="fab fa-linkedin"></i>
+           </div>
+            <div>
+              <h3>Secured by</h3>
+            <img src="/website/static/icons/cloudflarelogo.png" alt="Cloudflare">
+            <div class="dropdown-container">
+              <select>
+                <option>Singapore</option>
+              </select>
+            </div>
+            </div>
+            
+           
+            <div class="address">
+              Address: 65 Pasir Panjang, CAMPUS by ShopBack, Singapore
+              <br>
+              <a href="#">Terms and conditions</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </footer>   
 </body>
 </html>
