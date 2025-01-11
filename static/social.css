@@ -1,0 +1,445 @@
+/* dashboard-styles.css */
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fd8f11;
+}
+
+/* Top Header Bar */
+.top-header {
+    background-color: grey; /* Dark background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em; /* Spacing inside the header */
+    /*border-bottom: 2px solid #52312b; /* Optional border for separation */
+}
+
+.shopback-main-button {
+    cursor: pointer;
+}
+
+.logo-search {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Spacing between logo and search */
+}
+
+.header-logo {
+    width: 150px; /* Adjust logo size */
+}
+
+.search-bar {
+    width: 450px;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    height: 35px;
+    border-radius: 25px;
+}
+
+.search-bar::placeholder {
+    padding-left: 10px;
+}
+
+.search-button {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button i {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.search-button:hover {
+    background-color: #ddd;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Space between links */
+}
+
+.top-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3em 0.5em;
+}
+
+.top-links a:hover {
+    text-decoration: underline;
+}
+
+.wallet {
+    font-weight: bold;
+    background-color: #333;
+    padding: 0.3em 0.8em;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+    width: 75px;
+}
+
+
+.navbar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8em;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.navbar button:hover {
+    text-decoration: underline;
+}
+
+/* Social content styles */
+.social-content {
+    margin-top: 70px;
+    padding: 20px;
+    background-color: #fd8f11;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.social-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.social-content p {
+    font-size: 1.1rem;
+}
+
+
+.feed {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profile section adjustments */
+.profile {
+    align-items: center; /* Align the profile picture and name vertically */
+    gap: 10px; /* Reduce the gap between profile picture and username */
+    margin-bottom: 10px; /* Add space below the profile section */
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the profile picture circular */
+}
+
+.profile-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0; /* Remove default margin for tighter spacing */
+}
+
+
+.post {
+    flex: 1; /* Makes the post take up remaining space */
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.brand-logo {
+    width: 30px; /* Adjust width */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Aligns with the text */
+    margin-left: 5px; /* Adds spacing between text and image */
+}
+.post-actions {
+    display: flex;
+    background-color: inherit;
+    justify-content: space-around;
+    width: 20%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+
+}
+
+.action-btn-like {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.action-btn:hover {
+    background-color: #ccc;
+}
+
+.fa {
+    font-size: 1.2rem;
+    margin-right: 5px; /* Add spacing if paired with text */
+}
+.picture {
+    width: 100%; /* Adjust as needed */
+    max-width: 300px; /* Ensures the image doesn’t grow too large */
+    height: auto; /* Maintains the aspect ratio */
+    margin: 10px auto; /* Adds spacing and centers the image */
+    border : 1px solid black;
+}
+.liked {
+    background-color: #fd8f11;
+    color: white;
+}
+/* General container for layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Main content styles */
+.main-content {
+    flex: 3;
+    margin-right: 20px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    flex: 1;
+    background-color: #ffd700;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-bottom: 80px;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Suggested friends list */
+.suggested-friends {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggested-friends li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.friend-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-info {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.add-friend-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-friend-btn:hover {
+    background-color: #0056b3;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Profile section */
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/* Centering Content Wrapper */
+.content-wrapper {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    height: 200px; /* Takes full viewport height */
+    text-align: center; /* Centers text inside the child elements */
+    gap: 30px; /* Space between the two sections */
+}
+
+/* Welcome Content Styling */
+.welcome-content {
+    flex: 1; /* Takes up available space */
+    max-width: 50%; /* Restrict maximum width */
+    color: white;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Leaderboard Wrapper */
+.leaderboard-wrapper {
+    flex: 1; /* Takes up available space */
+    max-width: 400px; /* Restrict maximum width */
+}
+
+/* Leaderboard Styles */
+.leaderboard {
+    background: linear-gradient(135deg, #fd8f11, #ffd700);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #333;
+    text-align: center;
+}
+
+.leaderboard h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.leaderboard-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderboard-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Rank Styling */
+.leader-rank {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Name Styling */
+.leader-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Badge Styling */
+.leader-badge {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Amount Styling */
+.leader-amount {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1rem;
+}
+
+/* Bottom Navigation Styles */
+.bottom-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #333; /* Dark background for contrast */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #fd8f11; /* Matches the site's color scheme */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #ffd700; /* Highlight color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}

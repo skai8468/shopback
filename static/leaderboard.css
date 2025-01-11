@@ -1,0 +1,84 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fd8f11;
+    color: #333;
+}
+
+/* Container for the leaderboard and friends section */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #fd8f11, #ffd700);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings styling */
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Table styling for leaderboard */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+table th {
+    background-color: linear-gradient(135deg, #fd8f11, #ffd700);
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+table td {
+    text-align: center;
+    font-size: 1rem;
+}
+
+table tr:nth-child(even) {
+    background: linear-gradient(135deg, #fd8f11, #ffd700);
+}
+
+table tr:hover {
+    background-color:#fd8f11;
+}
+
+/* Styling for the friends list section */
+.friend-list {
+    margin-top: 20px;
+}
+
+.friend {
+    background-color: #fd8f11;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.friend:hover {
+    background-color: #ffd700;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Friend name styling */
+.friend-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
