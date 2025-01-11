@@ -1,0 +1,298 @@
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fd8f11;
+}
+button{
+    border: none;
+}
+/* Top Header Bar */
+.top-header {
+    background-color: grey; /* Dark background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em; /* Spacing inside the header */
+    /*border-bottom: 2px solid #52312b; /* Optional border for separation */
+}
+
+.shopback-main-button {
+    cursor: pointer;
+}
+
+.logo-search {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Spacing between logo and search */
+}
+
+.header-logo {
+    width: 150px; /* Adjust logo size */
+}
+
+.search {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 8px;
+}
+
+.search-bar {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    font-size: 1rem;
+    background-color: grey;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+}
+
+.search-bar::placeholder {
+    padding-left: 10px;
+    color: white;
+}
+
+.search-button {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding-right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-left: 10px;
+    
+}
+
+.search-logo {
+    max-width: 60%; /* Adjust based on the icon size */
+    max-height: 60%;
+    display: block;
+}
+
+.search-button:hover {
+    background-color: #ddd;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 1em; /* Space between links */
+}
+
+.top-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3em 0.5em;
+}
+
+.top-links a:hover {
+    text-decoration: underline;
+}
+
+.account {
+    display: flex;
+    border: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.account-logo {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    background-color: grey;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+}
+
+.wallet {
+    flex: 1;
+    font-weight: bold;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+
+.navbar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8em;
+}
+
+.navbar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5em 1em;
+}
+
+.navbar button:hover {
+    text-decoration: underline;
+}
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 30px; /* Add space between sections */
+    text-align: center;
+    padding: 20px; /* Add padding for spacing */
+}
+
+.welcome-content {
+    max-width: 80%; /* Adjust width to fit the content nicely */
+    color: white;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.feed-container {
+    display: flex; /* Enable flexbox for side-by-side layout */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Add space between the cards */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin: 20px 0; /* Add vertical spacing */
+}
+
+.feed {
+    flex: 1; /* Allow cards to take equal space */
+    max-width: 300px; /* Set a maximum width for each card */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center; /* Align content within each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Profile section adjustments */
+.profile {
+    align-items: center; /* Align the profile picture and name vertically */
+    gap: 10px; /* Reduce the gap between profile picture and username */
+    margin-bottom: 10px; /* Add space below the profile section */
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the profile picture circular */
+}
+
+.profile-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0; /* Remove default margin for tighter spacing */
+}
+
+
+.post {
+    flex: 1; /* Makes the post take up remaining space */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.post-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.picture {
+    max-width: 150px; /* Ensures the image doesn’t grow too large */
+    height: 80px; /* Maintains the aspect ratio */
+    margin: 10px auto; /* Adds spacing and centers the image horizontally */
+    display: block; /* Makes the image behave as a block element */
+}
+.join-now-btn {
+    display: inline-block;
+    text-decoration: none; /* Remove underline */
+    margin: 20px auto; 
+    padding: 10px 20px;
+    background-color: #fd8f11;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.join-now-btn:hover {
+    background-color: #c5700e;
+}
+.groupbuy-already-in {
+    margin-top: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.groupbuy-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px; /* Reduce the space between items */
+    justify-items: center; /* Center items horizontally */
+    width: 80%; /* Reduce the width of the grid container */
+    margin: 0 auto; /* Center the grid on the page */
+}
+
+.groupbuy-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 100%; /* Full width of the grid cell */
+    max-width: 400px; /* Optional max-width for better appearance */
+}
+
+
+.view-more-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #ff7f00;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #e66c00;
+}

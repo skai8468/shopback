@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <link rel="stylesheet" href="../static/friendsprofile.css"> <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='friendsprofile.css') }}">
     <title>{{ user[5] }}'s Profile</title>  <!-- Display username -->
+    
 </head>
 <body>
-    <h1>{{ user[5] }}'s Profile</h1>
-    <p><strong>Name:</strong> {{ user[0] }}</p>
-    <p><strong>Highest Shopback Percent:</strong> {{ user[1] }}%</p>
-    <p><strong>Number of Vouchers Used:</strong> {{ user[2] }}</p>
-    <p><strong>Number of Friends:</strong> {{ user[3] }}</p>
-    <p><strong>Ranking:</strong> {{ user[4] }}</p>
-    <form method="POST" action="{{ url_for('add_friend', username=user[5]) }}">
-        <button type="submit">Add as Friend</button>
-    </form> 
-    <a href="{{ url_for('discover') }}">
-        <button>Back to discover</button>
-    </a> 
+        <h1>{{ user[5] }}'s Profile</h1>
+        <p><strong>Name:</strong> {{ user[0] }}</p>
+        <p><strong>Highest Shopback Percent:</strong> {{ user[1] }}%</p>
+        <p><strong>Number of Vouchers Used:</strong> {{ user[2] }}</p>
+        <p><strong>Number of Friends:</strong> {{ user[3] }}</p>
+        <p><strong>Ranking:</strong> {{ user[4] }}</p>
+        <form method="POST" action="{{ url_for('add_friend', username=user[5]) }}">
+            <button type="submit">Add as Friend</button>
+        </form> 
+        <a href="{{ url_for('discover') }}">
+            <button>Back to discover</button>
+        </a> 
 </body>
 </html>
 
