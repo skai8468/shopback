@@ -3,19 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to Your Profile</h1>
-    <p><strong>Name:</strong> {{ user[1] }}</p>
-    <p><strong>Highest Shopback Percent:</strong> {{ user[2] }}</p>
-    <p><strong>Number of Vouchers Used:</strong> {{ user[3] }}</p>
-    <p><strong>Number of Friends:</strong> {{ user[4] }}</p>
-    <a href="/my_friends">See all friends</a>
-    <p><strong>Ranking:</strong> {{ user[5] }}</p>
-    <p><strong>Username:</strong> {{ user[6] }}</p>
-    
-    <a href="/logout">Logout</a>
-    <a href="/dashboard">Dashboard</a>
+    <div class ="container">
+    <div class="header">
+        <header>
+            <div class="top-header">
+                <div class="logo-search">
+                    <button class="shopback-main-button">
+                        <img src="/static/icons/shopbacklogosk.png" alt="ShopBack Logo" class="header-logo">
+                    </button>
+                    <div class="search-bar-container">
+                        <input type="text" placeholder="Search for stores" class="search-bar">
+                        <button class="search-button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="top-links">
+                    <a href="#" class="refer-earn">Refer & Earn</a>
+                    <a href="#" class="how-it-works">How It Works</a>
+                    <!--<a href="/logout">Logout</a>-->
+                    <div>
+                        <a href="#" class="wallet">$0.00</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
+                <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
+                <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
+                <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
+                <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
+                <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
+                <button onclick="window.location.href='dashboard.html'">Dashboard</button>
+                <button onclick="window.location.href='profile.html'">Profile</button>
+                <button onclick="window.location.href='rewards.html'">Rewards</button> 
+                <button onclick="window.location.href='social.html'">Social</button>
+            </div>
+        </header>
+    </div>
+
+    <main class ="content">  
+    <!-- Profile and Tier Section -->
+    <div class="profile-tier-container">
+        <section class="profile-section">
+        <h2>Profile Information</h2>
+        <div class="profile-picture">
+            <img src="/website/static/icons/profilepic.jpg" alt="Profile Picture" class="profile-pic">
+        </div>
+        <div class="account-info">
+            <div class="info-bubble">
+            <p><strong>Name:</strong> {{ user[1] }}</p>
+            <p><strong>Username:</strong> {{ user[6] }}</p>
+            <p><strong>Ranking:</strong> {{ user[5] }}</p>
+            <p><strong>Number of Friends:</strong> {{ user[4] }}</p>
+            <a href="my_friends.html">See all friends</a>
+            </div>
+        </div>
+        </section>
+
+        <section class="tier-progress-section">
+        <h2>Tier Progress</h2>
+        <div class="circular-progress-container">
+            <div class="circular-progress" style="--progress: 60;">
+            <div class="circular-inner-text">60%</div>
+            </div>
+            <div class="tier-labels">
+            <p><strong>Current Tier:</strong> Gold</p>
+            <p><strong>Next Tier:</strong> Platinum</p>
+            </div>
+        </div>
+        </section>
+    </div>
+
+    <!-- Account Tier Information Section -->
+    <section class="tier-info-section">
+        <h2>Account Tiers</h2>
+        <div class="tier-info">
+        <div class="tier">
+            <span class="tier-icon achieved" style="color: #cd7f32;"><i class="fa fa-circle"></i></span>
+            <p><strong>Bronze:</strong> $0 total cashback required</p>
+        </div>
+        <div class="tier">
+            <span class="tier-icon achieved" style="color: #c0c0c0;"><i class="fa fa-circle"></i></span>
+            <p><strong>Silver:</strong> $10 total cashback required</p>
+        </div>
+        <div class="tier">
+            <span class="tier-icon achieved" style="color: #ffd700;"><i class="fa fa-circle"></i></span>
+            <p><strong>Gold:</strong> $100 total cashback required</p>
+        </div>
+        <div class="tier">
+            <span class="tier-icon" style="color: #e5e4e2;"><i class="fa fa-circle"></i></span>
+            <p><strong>Platinum:</strong> $500 total cashback required</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <h2>Personal Achievements</h2>
+        <table class="achievement-table">
+        <thead>
+            <tr>
+            <th>Achievement</th>
+            <th>Progress</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>Highest Shopback Percent</td>
+            <td>{{ user[2] }}</td>
+            </tr>
+            <tr>
+            <td>Number of Vouchers Used</td>
+            <td>{{ user[3] }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </section>
+    </main>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <div>
+          <h3>Reach us</h3>
+          <a href="#">Chat with us</a>
+          <a href="#">Help centre</a>
+        </div>
+        <div>
+          <h3>ShopBack</h3>
+          <a href="#">About us</a>
+          <a href="#">ShopBack Careers</a>
+          <a href="#">All Stores</a>
+          <a href="#">Business</a>
+          <a href="#">Press</a>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <a href="#">Download app via iOS</a>
+          <a href="#">Download app via Play Store</a>
+          <a href="#">Download app via Huawei</a>
+          <a href="#">Install ShopBack Button</a>
+        </div>
+        <div>
+          <h3>How it works</h3>
+          <a href="#">Online Cashback</a>
+          <a href="#">ShopBack Pay</a>
+          <a href="#">Vouchers</a>
+        </div>
+        <div class="social-icons">
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-telegram"></i>
+          <i class="fab fa-tiktok"></i>
+          <i class="fab fa-linkedin"></i>
+       </div>
+        <div>
+          <h3>Secured by</h3>
+        <img src="/website/static/icons/cloudflarelogo.png" alt="Cloudflare">
+        <div class="dropdown-container">
+          <select>
+            <option>Singapore</option>
+          </select>
+        </div>
+        </div>
+        
+       
+        <div class="address">
+          Address: 65 Pasir Panjang, CAMPUS by ShopBack, Singapore
+          <br>
+          <a href="#">Terms and conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </footer>
 </body>
 </html>

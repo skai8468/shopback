@@ -4,10 +4,47 @@
 
     <link rel="stylesheet" href="../static/friendsprofile.css"> <!-- Link to the CSS file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='friendsprofile.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>{{ user[5] }}'s Profile</title>  <!-- Display username -->
     
 </head>
 <body>
+    <!--Header Section-->
+<div class="header">
+    <header>
+      <div class="top-header">
+          <div class="logo-search">
+              <button class="shopback-main-button">
+                  <img src="/static/icons/shopbacklogosk.png" alt="ShopBack Logo" class="header-logo">
+              </button>
+              <div class="search-bar-container">
+                  <input type="text" placeholder="Search for stores" class="search-bar">
+                  <button class="search-button">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </div>
+          </div>
+          <div class="top-links">
+              <a href="#" class="refer-earn">Refer & Earn</a>
+              <a href="#" class="how-it-works">How It Works</a>
+              <!--<a href="/logout">Logout</a>-->
+              <div>
+                  <a href="#" class="wallet">$0.00</a>
+              </div>
+          </div>
+      </div>
+<div class="navbar">
+    <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
+    <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
+    <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
+    <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
+    <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
+    <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
+    <button onclick="window.location.href='dashboard.html'">Dashboard</button>
+    <button onclick="window.location.href='profile.html'">Profile</button>
+    <button onclick="window.location.href='rewards.html'">Rewards</button> 
+    <button onclick="window.location.href='social.html'">Social</button>
+</div>
         <h1>{{ user[5] }}'s Profile</h1>
         <p><strong>Name:</strong> {{ user[0] }}</p>
         <p><strong>Highest Shopback Percent:</strong> {{ user[1] }}%</p>
@@ -20,6 +57,59 @@
         <a href="{{ url_for('discover') }}">
             <button>Back to discover</button>
         </a> 
+        <!-- Footer Section -->
+<footer>
+    <div>
+      <h3>Reach us</h3>
+      <a href="#">Chat with us</a>
+      <a href="#">Help centre</a>
+    </div>
+    <div>
+      <h3>ShopBack</h3>
+      <a href="#">About us</a>
+      <a href="#">ShopBack Careers</a>
+      <a href="#">All Stores</a>
+      <a href="#">Business</a>
+      <a href="#">Press</a>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <a href="#">Download app via iOS</a>
+      <a href="#">Download app via Play Store</a>
+      <a href="#">Download app via Huawei</a>
+      <a href="#">Install ShopBack Button</a>
+    </div>
+    <div>
+      <h3>How it works</h3>
+      <a href="#">Online Cashback</a>
+      <a href="#">ShopBack Pay</a>
+      <a href="#">Vouchers</a>
+    </div>
+    <div class="social-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-telegram"></i>
+      <i class="fab fa-tiktok"></i>
+      <i class="fab fa-linkedin"></i>
+   </div>
+    <div>
+      <h3>Secured by</h3>
+    <img src="/website/static/icons/cloudflarelogo.png" alt="Cloudflare">
+    <div class="dropdown-container">
+      <select>
+        <option>Singapore</option>
+      </select>
+    </div>
+    </div>
+    
+   
+    <div class="address">
+      Address: 65 Pasir Panjang, CAMPUS by ShopBack, Singapore
+      <br>
+      <a href="#">Terms and conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
 </body>
 </html>
 
