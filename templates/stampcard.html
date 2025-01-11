@@ -6,6 +6,7 @@
     <title>ShopBack Loyalty Stampcards</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
     <link rel="stylesheet" href="/static/design.css">
+    <link rel="stylesheet" href="/static/header-footer.css">>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,39 +19,43 @@
 <body>
     <header>
         <div class="top-header">
-            <div class="logo-search">
-                <button class="shopback-main-button">
-                <!-- <img src="{{ url_for('static', filename='icons/ShopBack-menu-logo.png') }}" alt="ShopBack Logo" class="header-logo"> -->
-                    <img src="/static/icons/ShopBack-menu-logo.png" class="header-logo">
-                </button>
-                <div class="search">
-                    <input type="text" placeholder="Search for stores" class="search-bar">
-                    <button class="search-button">
-                        <img src="{{ url_for('static', filename= 'icons/search-logo.png')}}" class="search-logo"> <!-- FontAwesome for search icon -->
-                    </button>
-                </div>
+            <div class="header">
+                <header>
+                  <div class="top-header">
+                      <div class="logo-search">
+                          <button class="shopback-main-button">
+                              <img src="/static/icons/shopbacklogosk.png" alt="ShopBack Logo" class="header-logo">
+                          </button>
+                          <div class="search-bar-container">
+                              <input type="text" placeholder="Search for stores" class="search-bar">
+                              <button class="search-button">
+                                  <i class="fa fa-search"></i>
+                              </button>
+                          </div>
+                      </div>
+                      <div class="top-links">
+                          <a href="#" class="refer-earn">Refer & Earn</a>
+                          <a href="#" class="how-it-works">How It Works</a>
+                          <!--<a href="/logout">Logout</a>-->
+                          <div>
+                              <a href="#" class="wallet">$0.00</a>
+                          </div>
+                      </div>
+                  </div>
+            <div class="navbar">
+                <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
+                <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
+                <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
+                <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
+                <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
+                <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
+                <button onclick="window.location.href='dashboard.html'">Dashboard</button>
+                <button onclick="window.location.href='profile.html'">Profile</button>
+                <button onclick="window.location.href='rewards.html'">Rewards</button> 
+                <button onclick="window.location.href='social.html'">Social</button>
             </div>
-            <div class="top-links">
-                <a href="#" class="refer-earn">Refer and earn</a>
-                <a href="#" class="how-it-works">How it works</a>
-                <div class="account">
-                    <img src="{{ url_for('static', filename = 'icons/account-logo-2.png')}}" class="account-logo">
-                    <div href="#" class="wallet">$0.00</div>
-                </div>
-                
-            </div>
-        </div>
 
-        <div class="navbar">
-            <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
-            <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
-            <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
-            <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
-            <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
-            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
-            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Social</button>
-            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Rewards</button>
-        </div>
+        
     </header>
 
     <main>
@@ -69,7 +74,11 @@
                         {% endfor %}
     
                     </div>
-                        <img src="{{ url_for('static', filename = 'icons/shopback_coupon.jpg')}}" class = "Coupons" id=" generalVoucher">
+                    <div class="coupons-display">
+                        <!-- <img src="{{ url_for('static', filename = 'icons/shopback_coupon.jpg')}}" class="coupons" id=" generalVoucher"> -->
+                        <img src="/static/icons/shopback_coupon.jpg" class="coupons">
+                        <div class="voucher-display">New</div> <!-- insert python block to show how many vouchers users have-->
+                    </div>
                 </div>
             </div>
         </section>
@@ -94,7 +103,7 @@
                 <!-- Store 2 -->
                 <div class="store-bar" id = "Store2">
                     <!-- <img src="{{ url_for('static', filename = 'icons/adidas-logo.png')}}" alt="Adidas Logo" class="store-logo"> -->
-                    <img  src="/static/icons/adidas-logo.png" class="store-logo">
+                    <img  src="/static/icons/uniqlo.svg" class="store-logo">
                     <div class="stampcards" id = "Store2Stamps" value = "Store2Stamps">
                         {% for i in range(stamps.store_2) %}
                             <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp" class = "stamp-icon">
@@ -104,7 +113,6 @@
             </div>
         </section>
 
-        <button id="add-store-bar">Add New Store</button>
     </main>
 
     <script src="website/static/script.js"></script>
