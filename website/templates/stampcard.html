@@ -4,41 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopBack Loyalty Stampcards</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/website/static/design.css">
 
 </head>
 <body>
     <header>
-        <div class="top-header">
-            <div class="logo-search">
-                <button class="shopback-main-button">
-                <img src="{{ url_for('static', filename='icons/ShopBack-menu-logo.png') }}" alt="ShopBack Logo" class="header-logo">
-                </button>
-                <div class="search">
-                    <input type="text" placeholder="Search for stores" class="search-bar">
-                    <button class="search-button">
-                        <img src="{{ url_for('static', filename= 'icons/search-logo.png')}}" class="search-logo"> <!-- FontAwesome for search icon -->
-                    </button>
-                </div>
-            </div>
-            <div class="top-links">
-                <a href="#" class="refer-earn">Refer and earn</a>
-                <a href="#" class="how-it-works">How it works</a>
-                <div class="account">
-                    <img src="{{ url_for('static', filename = 'icons/account-logo-2.png')}}" class="account-logo">
-                    <div href="#" class="wallet">$0.00</div>
-                </div>
-                
-            </div>
-        </div>
-
         <div class="navbar">
             <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
             <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
@@ -46,8 +16,6 @@
             <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
             <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
             <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
-            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Social</button>
-            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Rewards</button>
         </div>
     </header>
 
@@ -55,18 +23,19 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="shopback-logo">
-                    <img src="{{ url_for('static', filename = 'icons/shopbacklogo.webp')}}" alt="ShopBack Mascot" class="hero-mascot">
+                    <img src="/website/icons/shopbacklogo.webp" alt="ShopBack Mascot" class="hero-mascot">
                 </div>
                 <div class="hero-text">
-                    <div class="loyalty-stampcard-text">Loyalty Stampcards</div>
-                    <div class="description-text">Collect stamp cards with every purchase for attractive rewards!</div>
+                    <h1 class="loyalty-stampcard-text">Loyalty Stampcards</h1>
+                    <p class="description-text">Collect stamp cards with every purchase for attractive rewards!</p>
                     <div class="stampcard-display">
-                        {% for i in range(stamps.Shopback) %}
-                            <img src="https://static-common.shopback.com/2022/logos/sb-logo.svg" alt="ShopBack Stamp" class="stamp-icon" id ="generalStamp">
-                        {% endfor %}
-    
+                        <img src="https://static-common.shopback.com/2022/logos/sb-logo.svg" alt="ShopBack Stamp">
+                        <img src="https://static-common.shopback.com/2022/logos/sb-logo.svg" alt="ShopBack Stamp">
+                        <img src="https://static-common.shopback.com/2022/logos/sb-logo.svg" alt="ShopBack Stamp">
+                        <img src="https://static-common.shopback.com/2022/logos/sb-logo.svg" alt="ShopBack Stamp">
+                        <img src="https://static-common.shopback.com/2022/logos/sb-logo.svg" alt="ShopBack Stamp">
                     </div>
-                        <img src="{{ url_for('static', filename = 'icons/shopback_coupon.jpg')}}" class = "Coupons" id=" generalVoucher">
+                    <a href="#" class="view-stamps-link">View all loyalty stamps -></a>
                 </div>
             </div>
         </section>
@@ -74,26 +43,20 @@
         <section id="store-section">
             <h2 class="section-title">Store Stampcards</h2>
             <div class="store-grid">
-
-                <!-- Store 1 -->
-                <div class="store-bar"  >
-                    <img src="{{ url_for('static', filename = 'icons/nike-logo.webp')}}" alt="Nike Logo" class="store-logo">
-                    <div class="stampcards" id = "Store1Stamps">
-                        {% for i in range(stamps.store_1) %}
-                            <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp" class="stamp-icon">
-                        {% endfor %}
-
+                <div class="store-bar">
+                    <img src="/website/icons/nike-logo.webp" alt="Nike Logo" class="store-logo">
+                    <div class="stampcards">
+                        <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp">
+                        <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp">
+                        <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp">
                     </div>
-            
                 </div>
-
-                <!-- Store 2 -->
-                <div class="store-bar" id = "Store2">
-                    <img src="{{ url_for('static', filename = 'icons/adidas-logo.png')}}" alt="Adidas Logo" class="store-logo">
-                    <div class="stampcards" id = "Store2Stamps" value = "Store2Stamps">
-                        {% for i in range(stamps.store_2) %}
-                            <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp" class = "stamp-icon">
-                        {% endfor %}
+                <div class="store-bar">
+                    <img src="/website/icons/adidas-logo.png" alt="Adidas Logo" class="store-logo">
+                    <div class="stampcards">
+                        <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp">
+                        <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp">
+                        <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp">
                     </div>
                 </div>
             </div>
@@ -105,5 +68,3 @@
     <script src="website/static/script.js"></script>
 </body>
 </html>
-
-

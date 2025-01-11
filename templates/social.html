@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <link rel="stylesheet" href="../static/social-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo-search">
+                <button class="shopback-main-button">
+                    <img src="../static/icons/ShopBack-menu-logo.png" alt="ShopBack Logo" class="header-logo">
+                </button>
+                <input type="text" placeholder="Search for stores" class="search-bar">
+                <button class="search-button">
+                    <i class="fa fa-search"></i> <!-- FontAwesome for search icon -->
+                </button>
+            </div>
+            <div class="top-links">
+                <a href="#" class="refer-earn">Refer and earn</a>
+                <a href="#" class="how-it-works">How it works</a>
+                <div>
+                    <a href="#" class="wallet">$0.00</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="navbar">
+            <button onclick="window.location.href='https://www.shopback.sg/login?redirect=%2Faccount%2Fsubscription'">ShopBack Plus</button>
+            <button onclick="window.location.href='https://www.shopback.sg/vouchers'">Vouchers</button>
+            <button onclick="window.location.href='https://www.shopback.sg/travel'">Travel</button>
+            <button onclick="window.location.href='https://www.shopback.sg/marketplace'">Marketplace</button>
+            <button onclick="window.location.href='https://www.shopback.sg/fashion'">Fashion</button>
+            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Electronics</button>
+            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Social</button>
+            <button onclick="window.location.href='https://www.shopback.sg/electronics'">Rewards</button>
+        </div>
+    </header>
+
+    <!-- Social Content -->
+    <div class="content-wrapper">
+        <!-- Welcome Message -->
+        <div class="welcome-content">
+            <h1>Welcome to the Social Page</h1>
+            <p>Connect with your friends and explore shared cashback opportunities.</p>
+        </div>
+        <!-- Leaderboard -->
+        <div class="leaderboard-wrapper">
+            <div class="leaderboard">
+                <h3>Top Cash Back Earners</h3>
+                <ol class="leaderboard-list">
+                    <li>
+                        <span class="leader-name">Alice</span>
+                        <span class="leader-amount">$200</span>
+                    </li>
+                    <li>
+                        <span class="leader-name">Tom</span>
+                        <span class="leader-amount">$180</span>
+                    </li>
+                    <li>
+                        <span class="leader-name">Jessica</span>
+                        <span class="leader-amount">$150</span>
+                    </li>
+                    <li>
+                        <span class="leader-name">John</span>
+                        <span class="leader-amount">$120</span>
+                    </li>
+                    <li>
+                        <span class="leader-name">Michael</span>
+                        <span class="leader-amount">$100</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    
+        
+        <!-- Add more content here -->
+    <section class="feed">
+        <div class="profile">
+            <img src="../static/icons/profilepic.jpg" alt="Profile Picture" class="profile-pic">
+            <h2 class="profile-name">TOM</h2>
+        </div>
+        <div class="post">
+            <h3 class="post-title">Recently made a purchase from Nike<img src="../static/icons/nike.jpg" alt="Nike Logo" class="brand-logo"></h3>
+            <h4> Saved $5 from 5% cash-back </h4>
+            <!--<button id="join-btn"  class="join-btn" onclick="joinnow()" >Join Now</button>-->
+            <div class="post-actions">
+                <button id="like-btn" class="action-btn-like" onclick="toggleLike(this)">
+                    <i class="fa fa-thumbs-up"></i>
+                </button>
+                <button class="action-btn-like"><i class="fa fa-comment"></i></button>
+                <button class="action-btn-like"><i class="fa fa-share"></i></button>
+            </div>
+        </div>
+    </section>
+    <section class="feed">
+        <div class="profile">
+            <img src="../static/icons/profilepic.jpg" alt="Profile Picture" class="profile-pic">
+            <h2 class="profile-name">John</h2>
+        </div>
+        <div class="post">
+            <h3 class="post-title">Recently made a purchase from Trip.com </h3>
+            <h4> Saved $5 from 5% cash-back</h4>
+            <div class="post-actions">
+                <button id="like-btn" class="action-btn-like" onclick="toggleLike(this)">
+                    <i class="fa fa-thumbs-up"></i>
+                </button>
+                <button class="action-btn-like"><i class="fa fa-comment"></i></button>
+                <button class="action-btn-like"><i class="fa fa-share"></i></button>
+            </div>
+        </div>
+    </section>
+    <section class="feed">
+        <div class="profile">
+            <img src="../static/icons/profilepic.jpg" alt="Profile Picture" class="profile-pic">
+            <h2 class="profile-name">Moon</h2>
+        </div>
+        <div class="post">
+            <h3 class="post-title">Recently made a purchase from Puma </h3>
+            <img src="../static/icons/speedcat.jpg" class="picture">
+            <p> Love this shoe!! 	<span style="color:red;">&#x2764;</span></p>
+            <div class="post-actions">
+                <button id="like-btn" class="action-btn-like" onclick="toggleLike(this)">
+                    <i class="fa fa-thumbs-up"></i>
+                </button>
+                <button class="action-btn-like"><i class="fa fa-comment"></i></button>
+                <button class="action-btn-like"><i class="fa fa-share"></i></button>
+            </div>
+        </div>
+    </section>
+    <div class="sidebar">
+        <h3>Suggested Friends</h3>
+        <ul class="suggested-friends">
+            <li>
+                <img src="../static/icons/profilepic.jpg" alt="Friend 1" class="friend-pic">
+                <span class="friend-info">Alex</span>
+                <button class="add-friend-btn" onclick="addFriend(this)">Add Friend</button>
+            </li>
+            <li>
+                <img src="../static/icons/profilepic.jpg" alt="Friend 2" class="friend-pic">
+                <span class="friend-info">Jessica</span>
+                <button class="add-friend-btn" onclick="addFriend(this)">Add Friend</button>
+            </li>
+            <li>
+                <img src="../static/icons/profilepic.jpg" alt="Friend 3" class="friend-pic">
+                <span class="friend-info">Michael</span>
+                <button class="add-friend-btn" onclick="addFriend(this)">Add Friend</button>
+            </li>
+        </ul>
+    </div>
+</div>
+    
+    <script src="../static/social.js"></script>
+</body>
+</html>
