@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 1em; /* Spacing inside the header */
+     /* Spacing inside the header */
     /*border-bottom: 2px solid #52312b; /* Optional border for separation */
 }
 
