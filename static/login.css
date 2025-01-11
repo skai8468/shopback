@@ -1,0 +1,62 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login title */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f4f4f4; /* Match the page background */
+    top: 400px;
+    padding: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields styling */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #fd8f11; /* Highlight border on focus */
+    outline: none;
+}
+
+/* Submit button styling */
+button {
+    width: 100%; /* Button spans the full width of the form */
+    padding: 10px;
+    margin-top: 10px; /* Adds spacing between inputs and the button */
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #fd8f11; /* Matches your theme's orange color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ffab33; /* Slightly lighter orange on hover */
+    transform: scale(1.05);
+}
