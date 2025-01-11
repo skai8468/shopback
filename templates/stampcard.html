@@ -20,7 +20,8 @@
         <div class="top-header">
             <div class="logo-search">
                 <button class="shopback-main-button">
-                <img src="{{ url_for('static', filename='icons/ShopBack-menu-logo.png') }}" alt="ShopBack Logo" class="header-logo">
+                <!-- <img src="{{ url_for('static', filename='icons/ShopBack-menu-logo.png') }}" alt="ShopBack Logo" class="header-logo"> -->
+                    <img src="/static/icons/ShopBack-menu-logo.png" class="header-logo">
                 </button>
                 <div class="search">
                     <input type="text" placeholder="Search for stores" class="search-bar">
@@ -56,7 +57,8 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="shopback-logo">
-                    <img src="{{ url_for('static', filename = 'icons/shopbacklogo.webp')}}" alt="ShopBack Mascot" class="hero-mascot">
+                    <!-- <img src="{{ url_for('static', filename = 'icons/shopbacklogo.webp')}}" alt="ShopBack Mascot" class="hero-mascot"> -->
+                    <img src="/static/icons/shopbacklogo.webp" class="hero-mascot">
                 </div>
                 <div class="hero-text">
                     <div class="loyalty-stampcard-text">Loyalty Stampcards</div>
@@ -78,7 +80,8 @@
 
                 <!-- Store 1 -->
                 <div class="store-bar"  >
-                    <img src="{{ url_for('static', filename = 'icons/nike-logo.webp')}}" alt="Nike Logo" class="store-logo">
+                    <!-- <img src="{{ url_for('static', filename = 'icons/nike-logo.webp')}}" alt="Nike Logo" class="store-logo"> -->
+                    <img src="/static/icons/nike-logo.webp" class="store-logo">
                     <div class="stampcards" id = "Store1Stamps">
                         {% for i in range(stamps.store_1) %}
                             <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp" class="stamp-icon">
@@ -90,7 +93,8 @@
 
                 <!-- Store 2 -->
                 <div class="store-bar" id = "Store2">
-                    <img src="{{ url_for('static', filename = 'icons/adidas-logo.png')}}" alt="Adidas Logo" class="store-logo">
+                    <!-- <img src="{{ url_for('static', filename = 'icons/adidas-logo.png')}}" alt="Adidas Logo" class="store-logo"> -->
+                    <img  src="/static/icons/adidas-logo.png" class="store-logo">
                     <div class="stampcards" id = "Store2Stamps" value = "Store2Stamps">
                         {% for i in range(stamps.store_2) %}
                             <img src="https://andlarry.com/wp-content/uploads/2022/11/SB-AndL-Thumbnail-1.jpg" alt="ShopBack Stamp" class = "stamp-icon">
