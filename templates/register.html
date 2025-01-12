@@ -3,19 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff6a00; /* ShopBack's orange color */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 3px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border-color: #ff6a00;
+            outline: none;
+        }
+
+        button {
+            width: 101%;
+            padding: 15px;
+            background-color: #ff6a00; /* ShopBack's orange color */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e65c00; /* Slightly darker orange on hover */
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Register</h1>
-    <form method="POST">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="number" step="0.01" name="highestShopbackPercent" placeholder="Highest Shopback Percent" required>
-        <input type="number" name="numberOfVouchersUsed" placeholder="Number of Vouchers Used" required>
-        <input type="number" name="ranking" placeholder="Ranking" required>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Register</button>
-</form>
-
+    <div>
+        <h1>Register</h1>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" step="0.01" name="highestShopbackPercent" placeholder="Highest Shopback Percent" required>
+            <input type="number" name="numberOfVouchersUsed" placeholder="Number of Vouchers Used" required>
+            <input type="number" name="ranking" placeholder="Ranking" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

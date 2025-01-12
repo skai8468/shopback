@@ -163,24 +163,38 @@ def discover():
     # Get the current user's user_id from the session
     current_user_id = session.get("user_id")
 
-    # Query to fetch all user_ids and usernames from the users table
-    cursor.execute("SELECT user_id, username FROM users")
-    users = cursor.fetchall()
+    if not current_user_id:
+        return redirect(url_for("login"))  # Redirect to login if user is not logged in
 
-    # Close the database connection
-    cursor.close()
-    db.close()
+    try:
+        # Query to fetch users who are not friends with the current user
+        query = """
+            SELECT user_id, username 
+            FROM users 
+            WHERE user_id != %s AND user_id NOT IN (
+                SELECT user_id_1 
+                FROM friends 
+                WHERE user_id_2 = %s
+                UNION
+                SELECT user_id_2 
+                FROM friends 
+                WHERE user_id_1 = %s
+            )
+        """
+        cursor.execute(query, (current_user_id, current_user_id, current_user_id))
+        non_friends = [{"user_id": user[0], "username": user[1]} for user in cursor.fetchall()]
 
-    # Exclude the current user's user_id from the list
-    filtered_users = [
-        {"user_id": user[0], "username": user[1]} for user in users if user[0] != current_user_id
-    ]
+        # Log the non-friends for debugging purposes
+        print("Non-friends:", non_friends)
 
-    # Print the filtered usernames
-    print(filtered_users)
+    finally:
+        # Ensure the database connection is always closed
+        cursor.close()
+        db.close()
 
-    # Pass the filtered list of users (with user_id and username) to the template
-    return render_template("discover.html", users=filtered_users)
+    # Pass the list of non-friends to the template
+    return render_template("discover.html", users=non_friends)
+
 
 #################################################################################################################
 

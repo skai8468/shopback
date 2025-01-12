@@ -14,17 +14,17 @@ body {
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background: linear-gradient(135deg, #fd8f11, #ffd700);
+    background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 /* Headings styling */
 h1, h2 {
     text-align: center;
-    color: #333;
+    color: black;
     margin-bottom: 20px;
 }
 
@@ -33,6 +33,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    background-color: linear-gradient(135deg, #fd8f11, #ffd700);
 }
 
 table th, table td {
@@ -42,7 +43,7 @@ table th, table td {
 }
 
 table th {
-    background-color: linear-gradient(135deg, #fd8f11, #ffd700);
+    background-color: white;
     color: #333;
     text-transform: uppercase;
     font-weight: bold;
@@ -55,7 +56,7 @@ table td {
 }
 
 table tr:nth-child(even) {
-    background: linear-gradient(135deg, #fd8f11, #ffd700);
+    background: white;
 }
 
 table tr:hover {
