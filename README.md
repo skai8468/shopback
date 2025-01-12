@@ -10,7 +10,7 @@ We’ve also launched a Groupbuy Function, where users can team up with friends 
 Finally, our Leaderboard and Achievement System adds a competitive edge, encouraging users to set records and engage more frequently.
 By combining rewards, gamification, and social interaction, our platform transforms shopping from a transactional activity into a fun and engaging experience. With these features, we’re redefining how people connect with e-commerce.
 
- To run our website on your local device(Our database is a locally hosted ) for testing and reviewing.
+ To run our website on your local device (Our database is a locally hosted ) for testing and reviewing.
 
 1. Go to Mysql create a database 
 2. Once db is created, key in the following query : 
@@ -150,3 +150,4 @@ By combining rewards, gamification, and social interaction, our platform transfo
 
 
 
+                                                           Thank you <3
