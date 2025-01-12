@@ -1,10 +1,16 @@
 Shopback
 
 
-This is our product that we have designed as an extension to the current shopback platform.
-    Our extension being the digitalised stampcards and the social platform on our extension.
-    
- To run our website on your local device(Our database is a locally hosted ) for testing and vreviewing.
+**"Hi,we are farmers , and I’d like to introduce you to our product designed to revolutionize user engagement and retention through gamification and social connection that we believe can be added to the existing shopback platform.
+We’ve implemented a suite of features to make the platform not just a tool, but a dynamic and enjoyable experience.
+First, our Stamp Card System encourages repeat usage by rewarding customers for their loyalty—a tried-and-true method of boosting retention.We choose to digitalise stamp cards making them more convenient, and allows users to more easily stack stamps  on our platform, hence making users more inclined to use our platform.
+Next, we’ve introduced Account Tiering, inspired by achievement systems and leaderboards. It gamifies the user experience, giving people tangible incentives to climb the ranks and keep using the platform.
+Our Social System allows users to see what their friends are buying, creating a community-driven environment that feels like a blend of e-commerce and social media.
+We’ve also launched a Groupbuy Function, where users can team up with friends to unlock higher cashback percentages. This not only maximizes savings but turns shopping into a social and interactive activity.
+Finally, our Leaderboard and Achievement System adds a competitive edge, encouraging users to set records and engage more frequently.
+By combining rewards, gamification, and social interaction, our platform transforms shopping from a transactional activity into a fun and engaging experience. With these features, we’re redefining how people connect with e-commerce.
+
+ To run our website on your local device(Our database is a locally hosted ) for testing and reviewing.
 
 1. Go to Mysql create a database 
 2. Once db is created, key in the following query : 
